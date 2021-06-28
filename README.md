@@ -1,4 +1,4 @@
-# BitTravel
+# Big Travel
 
 Proyecto  generado con [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
 
