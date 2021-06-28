@@ -1,0 +1,19 @@
+.table {
+    .thead-dark {
+        border: 1px solid var(--clr-primary);
+        th {
+            color: var(--clr-font);
+            background-color: var(--clr-base-ligth);
+            border-color: var(--clr-primary);
+        }
+    }
+    border-radius: 50%!important;
+    tbody {
+        border: 1px solid var(--clr-primary);
+        td {
+            color: var(--clr-font);
+            background-color: var(--clr-base);
+            border-color: var(--clr-primary);
+        }
+    }
+}

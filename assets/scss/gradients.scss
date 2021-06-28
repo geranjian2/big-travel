@@ -1,0 +1,30 @@
+.gradient {
+    background-size: 210% 210%;
+    background-position: 100% 0;
+    border-radius: 50%;
+    padding: 12px 12px;
+}
+
+.gradient-danger {
+    background-color: #e14e7a;
+    background-image: linear-gradient(to bottom left, #e14eca, #ba54f5);
+    color: --clr-background;
+}
+
+.gradient-warning {
+    background-color: #e6fa72;
+    background-image: linear-gradient(to bottom left, #fcfa7c, #d8f000);
+    color: --clr-background;
+}
+
+.gradient-primary {
+    background-color: #72cffa;
+    background-image: linear-gradient(to bottom left, #5cc9fc, #21b7fd);
+    color: --clr-background;
+}
+
+.gradient-success {
+    background-color: #2dff38;
+    background-image: linear-gradient(to bottom left, #2cff37, #02cf0c);
+    color: --clr-background;
+}

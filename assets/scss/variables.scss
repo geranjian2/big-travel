@@ -1,0 +1,39 @@
+$clr-teal:#00FFA8;
+$clr-teal-d:darken($clr-teal, 20%);
+$clr-teal-l:lighten($clr-teal, 20%);
+$clr-orange:#EC8C62;
+$clr-orange-d:darken($clr-orange, 20%);
+$clr-orange-l:lighten($clr-orange, 20%);
+:root {
+    --clr-background: #EBEFF6;
+    --clr-background-dark: #eff2f7;
+    --clr-background-light: #f1f3f8;
+    --clr-base: #FFFFFF;
+    --clr-base-dark: #b2b2b2;
+    --clr-base-ligth: #ffffff;
+    --clr-font: #333333;
+    --clr-primary: #C462EC;
+    --clr-primary-ligth: #8944a5;
+    --clr-primary-dark: #cf81ef;
+    --font-size: 16px;
+    --border-radius: 0.2em;
+}
+
+.dark-mode {
+    --clr-background: #19012E;
+    --clr-background-dark: #160029;
+    --clr-background-light: #2f1a42;
+    --clr-base: #31005D;
+    --clr-base-dark: #27004a;
+    --clr-base-ligth: #7B09DD;
+    --clr-font: #FFFFFF;
+    --clr-primary: #C462EC;
+    --clr-primary-ligth: $clr-primary-dark-l;
+    --clr-primary-dark: $clr-primary-dark-d;
+    --font-size: 16px;
+    --border-radius: 0.2em;
+}
+
+.pointer {
+    cursor: pointer;
+}

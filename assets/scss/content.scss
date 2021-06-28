@@ -1,0 +1,109 @@
+.content {
+    padding: 0px 30px 30px 280px;
+    transition: .5s;
+    &.main {
+        padding: 0px 30px 30px 110px;
+    }
+}
+
+.grid-row {
+    width: 100%;
+    margin-bottom: 1.5em;
+}
+
+.card {
+    background-color: var(--clr-base);
+    border: 1px solid var(--clr-primary);
+    border-radius: 5px;
+    padding: 0.5em;
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
+    .header-card_chart {
+        padding: 10px;
+        margin-bottom: 30px;
+        span {
+            color: var(--clr-font);
+            font-size: 0.9em;
+        }
+        h6 {
+            color: var(--clr-font);
+            font-size: 1em;
+        }
+    }
+    .header-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        align-items: center;
+        padding-bottom: 10px;
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: rgba(29, 113, 182, 0.1);
+            margin: 0 auto;
+        }
+        .icon {
+            height: 50px;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        span {
+            display: flex;
+            justify-content: center;
+            color: gray;
+            font-size: 0.5em;
+        }
+        h6 {
+            display: flex;
+            justify-content: flex-start;
+            color: var(--clr-background);
+            font-size: 1.2em;
+        }
+    }
+    .footer-card {
+        padding: 10px 0 5px 10px;
+        i {
+            color: #a8a8a8;
+        }
+        span {
+            color: #a8a8a8;
+            margin-left: 10px;
+            font-weight: 300;
+            font-size: 13px;
+        }
+    }
+}
+
+.card-chart {
+    overflow: hidden;
+    height: auto;
+}
+
+.grid-row_4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+}
+
+@media screen and (max-width:900px) {
+    .grid-row_4 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+    }
+}
+
+@media only screen and (max-width:1200px) {
+    .content {
+        padding-left: 30px!important;
+    }
+    .nav-open .main-panel {
+        right: 0!important;
+        transform: translate3d(260px, 0, 0);
+        transition: .5s;
+    }
+}
