@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import 'variables',
+'grid-system',
+'gradients',
+'gradients',
+'utilities',
+'components/table',
+'components/form',
+'components/card',
+'components/button',
+'components/image',
+'components/login',
+'components/badget';
+body {
+    background: linear-gradient(var(--clr-background), var(--clr-background-light));
+    font-family: 'Poppins', sans-serif;
+    color: var(--clr-font);
+    font-size: 16px;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+.wrapper {
+    position: relative;
+    height: 100vh;
+    top: 0;
+}
+
+.main-panel {
+    width: 100%;
+    min-height: 100vh;
+    border-top: 2px solid var(--clr-base);
+    transition: .2s;
+    float: right;
+}
+
+@import 'sidebar',
+'navbar',
+'content';

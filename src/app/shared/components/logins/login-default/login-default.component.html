@@ -1,0 +1,18 @@
+<!-- login -->
+<form [formGroup]="formLogin" (ngSubmit)="submitLogin()" class="mt-3 cont-form-login py-5 px-4 mb-3 position-relative col-12">
+    <img class="position-absolute" src="../../../assets/img/astro-1.png" alt="astronauta!" height="220px">
+    <div class=" mt-5 position-relative">
+        <span *ngIf="campoNovalido('email')" class="errorForm">
+            Campo obligatorio                
+        </span>
+        <input type="email" formControlName="email" required="required" placeholder="Usuario" class="form-control login">
+    </div>
+    <div class="position-relative">
+        <span *ngIf="campoNovalido('password')" class="errorForm">
+            Campo obligatorio        
+        </span>
+        <input type="password" formControlName="password" required="required" placeholder="Contraseña" class="form-control login">
+    </div>
+
+    <button [disabled]="formLogin.invalid" class="btn btn-primary col-12 login">Ingresar</button>
+</form>

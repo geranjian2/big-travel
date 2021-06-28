@@ -1,0 +1,21 @@
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-wrapper">
+        <div class="">
+            <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Ingress_Logo.png" style="width:50px" alt=""> -->
+            <!-- <span>Temeplate Admin</span> -->
+        </div>
+        <div class="nav">
+            <ul>
+                <li *ngFor="let item of items; let i = index">
+                    <a class="ml-3" routerLink="{{item.link}}" mdbBtn color="primary" mdbWavesEffect>
+                        <i class="{{item.icon}} mr-2"></i>
+                        <span>{{item.title}}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+<!-- sidebar -->

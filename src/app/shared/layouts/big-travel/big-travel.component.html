@@ -1,0 +1,16 @@
+<div class="wrapper">
+    <app-sidenav></app-sidenav>
+    <div class="main-panel">
+        <app-header></app-header>
+        <div class="content" id="main">
+            <router-outlet></router-outlet>
+        </div>
+        <!-- content -->
+    </div>
+    <!-- main panel -->
+</div>
+<!-- wrapper -->
+<ngx-spinner size="medium" color="rgba(255,255,255,0)" type="ball-scale" [fullScreen]="true">
+    <img src="../../../../assets/img/logo-dark.png" class="spinner" alt="logo">
+    <p style="color: white !important"> Cargando... </p>
+</ngx-spinner>

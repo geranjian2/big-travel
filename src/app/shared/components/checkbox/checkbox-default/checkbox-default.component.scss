@@ -1,0 +1,50 @@
+.wrapper-color-switch {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+    margin-right: 2em;
+}
+
+.color-switch-label {
+    width: 3em;
+    height: 1.5em;
+    border-radius: 10em;
+    background-color: var(--clr-base);
+    border: 1px solid var(--clr-primary);
+    position: absolute;
+    cursor: pointer;
+}
+
+.color-switch-toggle {
+    width: 1.6em;
+    height: 1.6em;
+    border-radius: 50%;
+    background: var(--clr-primary);
+    position: absolute;
+    top: -0.14em;
+    left: 0em;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+.color-switch-label::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 1em;
+    left: -8em;
+    top: 0.4em;
+}
+
+#color-switch:checked~label .color-switch-toggle {
+    transform: translateX(1.5em);
+}
+
+#color-switch:checked~.color-switch-label::before {
+    content: "";
+}
+
+#color-switch {
+    display: none;
+}
