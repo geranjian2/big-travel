@@ -2,21 +2,26 @@ export function menu_init() {
     const boton = document.getElementById('boton-sidebar');
     const sidebar = document.getElementById('sidebar');
     const main = document.getElementById('main');
-    const botonFixed = document.getElementById('boton-sidebar_fixed');
-    const nabvar = document.getElementById('content-buttons');
     const botonLeft = document.getElementById('boton-sidebar_left');
     const body = document.getElementById('body');
+    const botonFixed = document.getElementById('boton-sidebar_fixed');
+
 
     boton.addEventListener('click', () => {
         sidebar.classList.toggle('toggle');
         main.classList.toggle('main');
     });
 
+
+
+
     botonFixed.addEventListener('click', () => {
         alert();
-        // sidebar.classList.toggle('toggle');
-        // main.classList.toggle('main');
+        sidebar.classList.toggle('toggle');
+        main.classList.toggle('main');
     });
+
+
 
     botonLeft.addEventListener('click', () => {
         console.log(body);
@@ -29,30 +34,39 @@ export function menu_init() {
 
 function mostrarBotonFixed() {
     let scroll = document.documentElement.scrollTop;
-    console.log(scroll);
+    const nabvar = document.getElementById('content-buttons');
+    const botonFixedScroll = document.getElementById('boton-sidebar_fixed');
     if (scroll >= 25) {
+        console.log(scroll);
         nabvar.classList.add('none');
-        botonFixed.classList.add('block');
+        botonFixedScroll.classList.add('block');
     } else {
-        botonFixed.classList.remove('block');
+        botonFixedScroll.classList.remove('block');
         nabvar.classList.remove('none');
 
     }
+
 }
 
 export function dark_mode() {
 
 
     const colorSwitch = document.querySelector('.color-switch');
+
     if (localStorage.getItem('mode') == 'dark') {
         darkModeOn();
-        colorSwitch.setAttribute('checked', true);
+        if (colorSwitch) {
+            colorSwitch.setAttribute('checked', true);
+        }
+
+
     } else {
         darkModeOff();
 
     }
-
-    colorSwitch.addEventListener('click', checkMode);
+    if (colorSwitch) {
+        colorSwitch.addEventListener('click', checkMode);
+    }
 }
 
 function checkMode() {

@@ -1,5 +1,5 @@
 <form [formGroup]="formRegister" (ngSubmit)="submitRegister()" class="mt-3 cont-form-register py-5 px-4 mb-3 position-relative col-12">
-    <img class="position-absolute" src="../../../assets/img/astro-1.png" alt="astronauta!" height="220px">
+    <img class="position-absolute" src="@../../assets/img/astro-1.png" alt="astronauta!" height="220px">
     <div class="mt-5 position-relative">
         <span *ngIf="campoNovalido('name')" class=" text-danger" class="errorForm">
             Campo obligatorio

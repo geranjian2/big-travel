@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBigTavel: 'https://big-travel.herokuapp.com',
+  apiBigTavel: 'https://travel-big.herokuapp.com',
 };

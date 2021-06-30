@@ -19,8 +19,10 @@ export class LoginDefaultComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
+    localStorage.clear();
     this.initLogin();
     localStorage.removeItem('user');
+    this._auth.setCurrentUserValue(null);
   }
 
   initLogin() {
@@ -30,7 +32,7 @@ export class LoginDefaultComponent implements OnInit {
     });
   }
 
-  campoNovalido( campo: string ) {
+  invalidField( campo: string ) {
     return this.formLogin.get(campo)?.invalid
       && this.formLogin.get(campo)?.touched;
   } 
