@@ -17,3 +17,7 @@ La aplicación se ingresa simulando cualquier correo y contreseña
 
 email bigtravel@travel.com
 passsword 123456
+
+
+# Despliegue
+https://geranjian2.github.io/big-travel/#/login
