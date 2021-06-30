@@ -19,7 +19,6 @@ export class LoginDefaultComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-    localStorage.clear();
     this.initLogin();
     localStorage.removeItem('user');
     this._auth.setCurrentUserValue(null);
