@@ -16,7 +16,6 @@ export function menu_init() {
 
 
     botonFixed.addEventListener('click', () => {
-        alert();
         sidebar.classList.toggle('toggle');
         main.classList.toggle('main');
     });
@@ -24,7 +23,6 @@ export function menu_init() {
 
 
     botonLeft.addEventListener('click', () => {
-        console.log(body);
         botonLeft.closest('.wrapper').classList.toggle('nav-open');
     });
 
@@ -37,7 +35,6 @@ function mostrarBotonFixed() {
     const nabvar = document.getElementById('content-buttons');
     const botonFixedScroll = document.getElementById('boton-sidebar_fixed');
     if (scroll >= 25) {
-        console.log(scroll);
         nabvar.classList.add('none');
         botonFixedScroll.classList.add('block');
     } else {
