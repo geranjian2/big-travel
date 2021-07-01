@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -9,17 +9,15 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class RegisterDefaultComponent implements OnInit {
 
   formRegister: FormGroup; 
+  @Output()
+  changeForm = new EventEmitter();
   constructor( 
     private formBuilder: FormBuilder,) {}
 
   ngOnInit(): void {
-    this.initRegister();
-  }
-
-  initRegister() {
     this.formRegister = this.formBuilder.group({
       name: ['', Validators.required],
-      last_name: ['', Validators.required],
+      lastname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],         
       condition: ['', Validators.required],         
@@ -27,26 +25,15 @@ export class RegisterDefaultComponent implements OnInit {
   }
  
 
-  campoNovalido( campo: string ) {
+  fieldNoValid( campo: string ) {
     return this.formRegister.get(campo)?.invalid
       && this.formRegister.get(campo)?.touched;
   } 
 
-  submitRegister(){
-    console.log(this.formRegister.value);
+  submit(){
     this.formRegister.markAllAsTouched();
+    if(this.formRegister.valid){
+      this.changeForm.emit(this.formRegister.value);
+    }
   }
-
-  // submitRegister(){
-  //   console.log(this.formRegister.value);
-
-  //   if (this.formRegister.valid) {
-  //     const value = this.formRegister.value;          
-  //     this.myService.createPerfil(value).subscribe((data) => {    
-  //    });       
-  //  } else {
-  //    this.formRegister.markAllAsTouched();
-  //  }
-  // }
-
 }

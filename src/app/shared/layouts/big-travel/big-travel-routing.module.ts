@@ -6,11 +6,11 @@ const routes: Routes = [
     path: '', component: BigTravelComponent,
     children:[
       {
-        path: '', 
+        path: 'naves', 
         loadChildren: () => import('../../../modules/naves/naves.module').then(m => m.NavesModule)
       },
       {
-        path: 'viajes', 
+        path: '', 
         loadChildren: () => import('../../../modules/viajes/viajes.module').then(m => m.ViajesModule)
       },
      

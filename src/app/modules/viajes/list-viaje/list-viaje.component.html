@@ -1,14 +1,18 @@
 <div class="d-grid gs-1 g-gap-3 mb-3">
     <h1>Mis Viajes</h1>
 </div>
+<div class="my-2">
+    <button class="btn btn-danger" (click)="errorServer()">Error Server 500</button>
+    <button class="btn btn-warning ml-1" (click)="expiredServer()">Unauthorized 401</button>
+</div>
 <div class="d-grid gs-1 g-gap-3 mb-3">
-    <!-- <div class="card card-chart"> -->
     <div class="table-responsive card">
         <table class="w-100 table table-border table-hover">
             <thead class="thead-dark ">
                 <tr>
                     <th scope="col pl-5">CÓDIGO</th>
                     <th scope="col pt-5">DESTINO</th>
+                    <th scope="col pt-5">PILOTO</th>
                     <th scope="col pt-5">FECHA LLEGADA</th>
                     <th scope="col pt-5">FECHA REGRESO</th>
                     <th scope="col pt-5">VALOR</th>
@@ -18,58 +22,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Mark</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td><span class="badge badge-teal">Activo</span></td>
+                <tr *ngFor="let travel of listTravel">
+                    <td>{{travel.id}}</td>
+                    <td>{{travel.planet}}</td>
+                    <td>{{travel.pilot}}</td>
+                    <td>{{travel.arrival_date | momentDate}}</td>
+                    <td>{{travel.departure_date | date:"dd/MM/yy"}}</td>
+                    <td>$ 20,000,000</td>
+                    <td><span class="badge" [ngClass]="classStatus(travel.isActive)">{{travel.isActive}}</span></td>
                     <td><i class="fas fa-pencil-alt"></i></td>
                 </tr>
-                <tr>
-                    <td>Jacob</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td><i class="fas fa-pencil-alt"></i></td>
-                </tr>
-                <tr>
-                    <td>Larry</td>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td><i class="fas fa-pencil-alt pointer"></i></td>
 
-                </tr>
-                <tr>
-
-                    <td>Larry</td>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td><i class="fas fa-pencil-alt"></i></td>
-
-                </tr>
-                <tr>
-
-                    <td>Larry</td>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td><i class="fas fa-pencil-alt"></i></td>
-
-                </tr>
             </tbody>
         </table>
     </div>
-    <!-- </div> -->
 </div>

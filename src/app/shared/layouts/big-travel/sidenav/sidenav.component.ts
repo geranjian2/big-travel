@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { menu_init } from '../../../../../assets/js/main'; 
+import { User } from '@src/app/core/models/user';
+import { AuthService } from '@src/app/core/services/auth.service';
+
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {
-
-  constructor() { }
-
+  user:User = new User();
+  constructor(private _auth:AuthService) { }
+  
   ngOnInit(): void {
- 
+   this.user = this._auth.getCurrentUserValue();
     menu_init();
  
   }
@@ -19,17 +22,12 @@ export class SidenavComponent implements OnInit {
     {
       "icon":"fa fa-globe",
       "title":"Mis Viajes",
-       "link":"/viajes"     
+       "link":"/"     
     },
     {      
       "icon":"fas fa-fighter-jet",
       "title":"Alquilar Nave",
-      "link":"/naves" 
-    },
-    {      
-      "icon":"fa fa-space-shuttle",
-      "title":"Naves",     
-      "link":"/viajes/travel"
+      "link":"/travel" 
     },
     {
       

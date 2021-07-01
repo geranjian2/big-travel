@@ -14,7 +14,7 @@ export class NavesViajesListComponent implements OnInit {
   }
 
   getDetail(){
-    this.router.navigate(['/viajes/rent']);
+    this.router.navigate(['/rent']);
     console.log()
   }
 

@@ -6,13 +6,15 @@ import { ListViajeComponent } from './list-viaje/list-viaje.component';
 import { DetailViajeComponent } from './detail-viaje/detail-viaje.component';
 import { NavesViajesListComponent } from './naves-viajes-list/naves-viajes-list.component';
 import { RentNaveComponent } from './rent-nave/rent-nave.component';
+import { PipesModule } from '@pipes/pipes.module';
 
 
 @NgModule({
   declarations: [ListViajeComponent, DetailViajeComponent, NavesViajesListComponent, RentNaveComponent],
   imports: [
     CommonModule,
-    ViajesRoutingModule
+    ViajesRoutingModule,
+    PipesModule.forRoot()
   ]
 })
 export class ViajesModule { }

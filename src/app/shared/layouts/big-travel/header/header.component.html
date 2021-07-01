@@ -17,7 +17,7 @@
     <div class="navbar-options">
         <app-checkbox-default></app-checkbox-default>
         <div class="photo">
-            <img src="https://i.pinimg.com/originals/81/b5/fe/81b5feba274871b01edfbb07f0d59af6.jpg" alt="">
+            <img src="{{user.image | image | async}}" alt="">
         </div>
         <i class="fas fa-power-off pointer" (click)="closeSesion()"></i>
     </div>

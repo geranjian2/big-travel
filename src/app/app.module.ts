@@ -8,10 +8,13 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { ComponentsModule } from './shared/components/components.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ErrorInterceptor,JwtInterceptor } from './core/interceptors/';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,11 @@ import { environment } from '../environments/environment';
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [HttpClientModule],
+  providers: [
+    HttpClientModule,
+    {provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptor,multi:true},
+    {provide:HTTP_INTERCEPTORS,useClass:JwtInterceptor,multi:true},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

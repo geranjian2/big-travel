@@ -10,6 +10,7 @@
       "@guards/*":["src/app/core/guards/*"],
       "@services/*":["src/app/core/services/*"],
       "@shared/*":["src/app/shared/*"],
+      "@pipes/*":["src/app/shared/pipes/*"],
       "@models/*":["src/app/models/*"],
       "@assets/*":["src/assets/*"],
       "@modules/*":["src/app/modules/*"],
@@ -27,6 +28,9 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "types": [
+      "node",
+    ],
   }
 }
