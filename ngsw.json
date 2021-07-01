@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1625063481238,
+  "timestamp": 1625127500855,
   "index": "https://geranjian2.github.io/big-travel/index.html",
   "assetGroups": [
     {
@@ -11,19 +11,19 @@
         "ignoreVary": true
       },
       "urls": [
-        "https://geranjian2.github.io/big-travel/5.5490bffbe138f7bcfb0c.js",
-        "https://geranjian2.github.io/big-travel/6.4cbfa4bd19d3cbc7cd2f.js",
-        "https://geranjian2.github.io/big-travel/7.4c5019ff5174429e525b.js",
-        "https://geranjian2.github.io/big-travel/8.991d818b3085be91a83b.js",
-        "https://geranjian2.github.io/big-travel/9.32c455913f29cb2fd13e.js",
-        "https://geranjian2.github.io/big-travel/common.f8ef159c84a7f01a95f7.js",
+        "https://geranjian2.github.io/big-travel/5.de4d0b260f18d40e2b28.js",
+        "https://geranjian2.github.io/big-travel/6.61cf4115f99f3d090f0d.js",
+        "https://geranjian2.github.io/big-travel/7.490c44f5a9fe86760ec0.js",
+        "https://geranjian2.github.io/big-travel/8.31c251e7596be9c97050.js",
+        "https://geranjian2.github.io/big-travel/9.e028ecc203a2968df906.js",
+        "https://geranjian2.github.io/big-travel/common.de8a45520af6d7c76911.js",
         "https://geranjian2.github.io/big-travel/favicon.ico",
         "https://geranjian2.github.io/big-travel/index.html",
-        "https://geranjian2.github.io/big-travel/main.44b9c29743e21d146d96.js",
+        "https://geranjian2.github.io/big-travel/main.2d69e72a539c14c31257.js",
         "https://geranjian2.github.io/big-travel/manifest.webmanifest",
         "https://geranjian2.github.io/big-travel/polyfills.2b9efda34b919da8fe8a.js",
-        "https://geranjian2.github.io/big-travel/runtime.506c9d35c76a10c4b2db.js",
-        "https://geranjian2.github.io/big-travel/styles.cbe6b1110c7d084203be.css"
+        "https://geranjian2.github.io/big-travel/runtime.1e8541a676ff38c64ab7.js",
+        "https://geranjian2.github.io/big-travel/styles.2034712ad0d7d24e156e.css"
       ],
       "patterns": []
     },
@@ -80,11 +80,11 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://geranjian2.github.io/big-travel/5.5490bffbe138f7bcfb0c.js": "b05fd4da3cf7b2af29026a1fa613ee0fb058c495",
-    "https://geranjian2.github.io/big-travel/6.4cbfa4bd19d3cbc7cd2f.js": "f682ff2d9c5e977c85e1f4f45c2c379fcce9941b",
-    "https://geranjian2.github.io/big-travel/7.4c5019ff5174429e525b.js": "d1885482688c6f24a3b4e34e9720df115bb36d43",
-    "https://geranjian2.github.io/big-travel/8.991d818b3085be91a83b.js": "aebcf4698afd50bb2b2ea680f6dcae2453fe3158",
-    "https://geranjian2.github.io/big-travel/9.32c455913f29cb2fd13e.js": "aba914f4a5541431d6af6f8615454e4081486ead",
+    "https://geranjian2.github.io/big-travel/5.de4d0b260f18d40e2b28.js": "c245c715f18897385179d259bd9c0493f42b7729",
+    "https://geranjian2.github.io/big-travel/6.61cf4115f99f3d090f0d.js": "349ef220828281b1d8b920d7026ead4ceaab0922",
+    "https://geranjian2.github.io/big-travel/7.490c44f5a9fe86760ec0.js": "a038da41c5838e714e824cf725cdac80ad51f79c",
+    "https://geranjian2.github.io/big-travel/8.31c251e7596be9c97050.js": "340d5e26fb601c875bd99f3b18d333e3c33231d7",
+    "https://geranjian2.github.io/big-travel/9.e028ecc203a2968df906.js": "19d74d53b3d34b04206ec056313d095a8ec873b6",
     "https://geranjian2.github.io/big-travel/assets/icons/icon-128x128.png": "77b235fe4c3aaf03c48e6f98d09e10bda07ccca1",
     "https://geranjian2.github.io/big-travel/assets/icons/icon-144x144.png": "2c05e3169aef9884af5859523c3ccb0cb83dbe70",
     "https://geranjian2.github.io/big-travel/assets/icons/icon-152x152.png": "0c9551743883ea1dfd58d84746e1405a045de627",
@@ -119,19 +119,19 @@
     "https://geranjian2.github.io/big-travel/assets/scss/content.scss": "131c81cfbfd2387699469563be2a9d2cc059dc0c",
     "https://geranjian2.github.io/big-travel/assets/scss/gradients.scss": "5e5606520d8e73a5454e788d1bfa0049e561224c",
     "https://geranjian2.github.io/big-travel/assets/scss/grid-system.scss": "fbe5c14bd44c693ad1e48ea1c8b0391db1173208",
-    "https://geranjian2.github.io/big-travel/assets/scss/navbar.scss": "a6266050d6dd2898d41d7d9dd00dc4fc13ae77b8",
+    "https://geranjian2.github.io/big-travel/assets/scss/navbar.scss": "f301e35140d0bcd7d6fcf29402c1b84d0f3b363b",
     "https://geranjian2.github.io/big-travel/assets/scss/sidebar.scss": "c6ffc96fbb9170398960aa78f7398d2751b2929d",
     "https://geranjian2.github.io/big-travel/assets/scss/template.scss": "e567e8fdd70f5a3a9b45cd5bd00496ed7f7d6f86",
     "https://geranjian2.github.io/big-travel/assets/scss/utilities.scss": "0b3c0d21e58833647f140147e7e4783553851afc",
     "https://geranjian2.github.io/big-travel/assets/scss/variables.scss": "f1180287295ef98f5481eb71a6d691844f962522",
-    "https://geranjian2.github.io/big-travel/common.f8ef159c84a7f01a95f7.js": "03463991006689836978e9678d863cb3dc8426f8",
+    "https://geranjian2.github.io/big-travel/common.de8a45520af6d7c76911.js": "03463991006689836978e9678d863cb3dc8426f8",
     "https://geranjian2.github.io/big-travel/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://geranjian2.github.io/big-travel/index.html": "f79e1a791912e5817c06ed2481ca504be506a77c",
-    "https://geranjian2.github.io/big-travel/main.44b9c29743e21d146d96.js": "a7895cd32d08d68e376287946a01a3b9d2c477e9",
+    "https://geranjian2.github.io/big-travel/index.html": "c44220cd3020acfb56a9dc164c20b06446670ec4",
+    "https://geranjian2.github.io/big-travel/main.2d69e72a539c14c31257.js": "5c5de07a8dc0e692c3f9e6ed4dfcec3fc132b4f2",
     "https://geranjian2.github.io/big-travel/manifest.webmanifest": "a1d3e56e58d0c74f19d76e22fc53d1ff2f0ca48f",
     "https://geranjian2.github.io/big-travel/polyfills.2b9efda34b919da8fe8a.js": "9db3f1bf5afbecb31233abc0b143858b395cc9e9",
-    "https://geranjian2.github.io/big-travel/runtime.506c9d35c76a10c4b2db.js": "a86f0a074e4ddbac4987e1d662daa146572d24a6",
-    "https://geranjian2.github.io/big-travel/styles.cbe6b1110c7d084203be.css": "c79fdbf3f4476742b107ca084f4acc0d2678827c"
+    "https://geranjian2.github.io/big-travel/runtime.1e8541a676ff38c64ab7.js": "2e51f4b61f947d466982bcfa0e32056cfb8c1ab2",
+    "https://geranjian2.github.io/big-travel/styles.2034712ad0d7d24e156e.css": "72592d542c96c1829a8d7c8d83242e2211226606"
   },
   "navigationUrls": [
     {
