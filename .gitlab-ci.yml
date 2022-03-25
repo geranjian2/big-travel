@@ -41,7 +41,7 @@ deploy_master:
     - mkdir .angular
     - cp -r dist/* .angular
     - cd .angular
-    - la -la
+    - ls -la
     - cd ..
     - mv .angular angular
     - zip -r angular.zip angular
