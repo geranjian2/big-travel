@@ -27,22 +27,15 @@ build_master:
 deploy_master:
   stage: deploy
   before_script:
-    - "command -v ssh-agent >/dev/null || ( apk add --update openssh )"
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
     - eval $(ssh-agent -s)
-    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
-    - ssh-keyscan $EC2_IPADDRESS >> ~/.ssh/known_hosts
-    - chmod 644 ~/.ssh/known_hosts
+    - chmod 400 $SSH_PRIVATE_KEY
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
     - apt-get update -y
     - apt-get -y install rsync
   script:
-    - mkdir .dist
-    - cp -r dist/* .dist
-    - mv .dist dist
-    - zip -r dist.zip dist
-    - ssh -o StrictHostKeyChecking=no ubuntu@54.173.243.87 "cd /var/www/html; rm -R dist; rm -R dist.zip"
-    - scp -o StrictHostKeyChecking=no dist.zip ubuntu@54.173.243.87:/var/www/html
-    - ssh -o StrictHostKeyChecking=no ubuntu@54.173.243.87 "cd /var/www/html; unzip dist.zip"
-    - ssh -o StrictHostKeyChecking=no ubuntu@54.173.243.87 "cd /var/www/html; cp .htaccess public/.htaccess"
+    - ssh -i $SSH_PRIVATE_KEY ubuntu@$EC2_IPADDRESS
+    - rsync -zvhr -auv -e "ssh -i $SSH_PRIVATE_KEY" dist/ ubuntu@$EC2_IPADDRESS:/var/www/html/angular/
   only: ['main']
