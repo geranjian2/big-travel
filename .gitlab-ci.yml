@@ -39,10 +39,12 @@ deploy_master:
   script:
     - ls -la
     - mkdir .angular
-    - cp -r dist .angular
+    - cp -r dist/* .angular
+    - cd .angular
     - mv .angular angular
     - zip -r angular.zip angular
-    # - ssh -o StrictHostKeyChecking=no ubuntu@54.173.243.87 "cd /var/www/html; rm -R angular; rm -R angular.zip"
+    - ssh -o StrictHostKeyChecking=no ubuntu@54.173.243.87 "cd /var/www/html; mv /home/user/angular /home/user/angular$(date +%Y%m%d%H%M)"
+    - ssh -o StrictHostKeyChecking=no ubuntu@54.173.243.87 "cd /var/www/html; rm -R angular; rm -R angular.zip"
     - scp -o StrictHostKeyChecking=no angular.zip ubuntu@54.173.243.87:/var/www/html
     - ssh -o StrictHostKeyChecking=no ubuntu@54.173.243.87 "cd /var/www/html; touch foo.txt; unzip angular.zip"
     - ssh -o StrictHostKeyChecking=no ubuntu@54.173.243.87 "cd /var/www/html; cp .htaccess angular/.htaccess"
