@@ -1,16 +1,16 @@
 # Node Image for docker on which code will execute
-image: node:latest
+image: node:14
 # This is the stages / task to perfom in jobs
 stages:
   - build
   - deploy
 
 # caching for reuse
-cache:
-  key: ${CI_COMMIT_REF_SLUG}
-  paths:
-  - node_modules/
-  - dist/
+# cache:
+#   key: ${CI_COMMIT_REF_SLUG}
+#   paths:
+#   - node_modules/
+#   - dist/
 
 # This command is run before the execution of stages
 before_script:
