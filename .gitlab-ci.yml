@@ -51,3 +51,39 @@ deploy_master:
     - ssh -o StrictHostKeyChecking=no ubuntu@54.173.243.87 "cd /var/www/html; touch foo.txt; unzip angular.zip"
     - ssh -o StrictHostKeyChecking=no ubuntu@54.173.243.87 "cd /var/www/html; cp .htaccess angular/.htaccess"
   only: ['main']
+
+  # Job One for making build
+build_master:
+  stage: build
+  script:
+  - npm run build
+  only: ['qa']
+
+# Job Two for deploy build to server
+deploy_master:
+  stage: deploy
+  before_script:
+    - "command -v ssh-agent >/dev/null || ( apk add --update openssh )"
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan $EC2_IPADDRESS >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - apt-get update -y
+    - apt-get -y install zip
+  script:
+    - ls -la
+    - mkdir .angularqa
+    - cp -r dist/* .angularqa
+    - cd .angularqa
+    - ls -la
+    - cd ..
+    - mv .angularqa angularqa
+    - zip -r angularqa.zip angularqa
+    - ssh -o StrictHostKeyChecking=no ubuntu@54.173.243.87 "cd /var/www/html; mv angularqa angularqa$(date +%Y%m%d%H%M)"
+    - ssh -o StrictHostKeyChecking=no ubuntu@54.173.243.87 "cd /var/www/html; rm -R angularqa; rm -R angularqa.zip"
+    - scp -o StrictHostKeyChecking=no angularqa.zip ubuntu@54.173.243.87:/var/www/html
+    - ssh -o StrictHostKeyChecking=no ubuntu@54.173.243.87 "cd /var/www/html; touch foo.txt; unzip angularqa.zip"
+    - ssh -o StrictHostKeyChecking=no ubuntu@54.173.243.87 "cd /var/www/html; cp .htaccess angularqa/.htaccess"
+  only: ['qa']
