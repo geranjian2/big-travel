@@ -55,7 +55,7 @@ deploy_master:
     - main
 
   # Job One for making build
-build_master:
+build_qa:
   stage: build
   script:
   - npm run buildqa
@@ -63,7 +63,7 @@ build_master:
     - qa
 
 # Job Two for deploy build to server
-deploy_master:
+deploy_qa:
   stage: deploy
   before_script:
     - "command -v ssh-agent >/dev/null || ( apk add --update openssh )"
