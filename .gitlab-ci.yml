@@ -37,6 +37,7 @@ deploy_master:
     - apt-get update -y
     - apt-get -y install rsync
   script:
-    - ssh -i $SSH_PRIVATE_KEY ubuntu@$EC2_IPADDRESS
-    - rsync -zvhr -auv -e "ssh -i $SSH_PRIVATE_KEY" dist/ ubuntu@$EC2_IPADDRESS:/var/www/html/angular/
+    - ssh -i StrictHostKeyChecking=no ubuntu@54.209.0.221
+    - ssh -o StrictHostKeyChecking=no ubuntu@54.209.0.221 "mkdir angular"
+    - scp -o StrictHostKeyChecking=no dist/ ubuntu@54.209.0.221:/var/www/html/angular
   only: ['main']
