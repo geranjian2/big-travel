@@ -1,0 +1,42 @@
+# Node Image for docker on which code will execute
+image: node:latest
+# This is the stages / task to perfom in jobs
+stages:
+  - build
+  - deploy
+
+# caching for reuse
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+  - node_modules/
+  - dist/
+
+# This command is run before the execution of stages
+before_script:
+  - npm install
+
+# Job One for making build
+build_master:
+  stage: build
+  script:
+  - npm run build
+  only: ['main']
+
+# Job Two for deploy build to server
+deploy_master:
+  stage: deploy
+  before_script:
+    - "command -v ssh-agent >/dev/null || ( apk add --update openssh )"
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan $EC2_IPADDRESS >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - apt-get update -y
+    - apt-get -y install rsync
+  script:
+    - ssh -i $SSH_PRIVATE_KEY ubuntu@$EC2_IPADDRESS
+    - rsync -zvhr -auv -e "ssh -i $SSH_PRIVATE_KEY" dist/ ubuntu@$EC2_IPADDRESS:/var/www/html/angular/
+  only: ['main']
