@@ -35,9 +35,15 @@ deploy_master:
     - ssh-keyscan $EC2_IPADDRESS >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
     - apt-get update -y
-    - apt-get -y install rsync
+    - apt-get -y install zip
   script:
     - ls -la
-    - ssh -o StrictHostKeyChecking=no ubuntu@54.173.243.87 "cd /var/www/html; mkdir angular"
-    - scp -o StrictHostKeyChecking=no dist/ ubuntu@54.173.243.87:/var/www/html/angular
+    - mkdir .angular
+    - cp -r dist .angular
+    - mv .angular angular
+    - zip -r angular.zip angular
+    - ssh -o StrictHostKeyChecking=no ubuntu@54.173.243.87 "cd /var/www/html; rm -R angular; rm -R angular.zip"
+    - scp -o StrictHostKeyChecking=no public.zip ubuntu@54.173.243.87:/var/www/html
+    - ssh -o StrictHostKeyChecking=no ubuntu@54.173.243.87 "cd /var/www/html; touch foo.txt; unzip angular.zip"
+    - ssh -o StrictHostKeyChecking=no ubuntu@54.173.243.87 "cd /var/www/html; cp .htaccess public/.htaccess"
   only: ['main']
